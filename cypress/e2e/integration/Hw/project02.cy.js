@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe("Cypress Actions", () => {
+describe("Cypress Project 2", () => {
     beforeEach(() => {
         cy.visit('https://www.techglobal-training.com/frontend/login')
     })
@@ -102,7 +102,7 @@ Validate that the button text is “SUBMIT”
 */
 
 it('Test Cases 04 & 05 - Validate the Forgot Password? Link and Reset Password modal and close button', () => {
-    
+
     cy.get('[class^="LoginForm"] a[href="/frontend/login"]').click()
 
     cy.get('#modal_title').should('be.visible').and('have.text', 'Reset Password')
