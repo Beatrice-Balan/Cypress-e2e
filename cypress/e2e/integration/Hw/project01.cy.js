@@ -60,8 +60,7 @@ it('Test Case 03 - Validate the Gender radio button', () => {
     cy.get('.control .radio input') // .field .control input[type="radio"]
     .should('have.attr', 'required')
 
-    /*
-    // Validate the options are “Female”, “Male” and “Prefer not to disclose”
+    /* LONG - Validate the options are “Female”, “Male” and “Prefer not to disclose”
     cy.get('.control .radio').should('have.length', 3)
 
     cy.get('.control .radio')
@@ -190,7 +189,6 @@ it('Test Case 06 - Validate the Phone input box', () => {
     cy.get(':nth-child(5) > .label')
     .should('have.text', 'Phone')
 })
-
 
 
 /* Test Case 07 - Validate the Message text area
