@@ -1,24 +1,24 @@
 /// <reference types="cypress"/>
 
-describe("Debugging", () => {
+describe('Debugging', () => {
   beforeEach(() => {
-    cy.visit("https://www.techglobal-training.com/frontend");
-    cy.clickCard("HTML Elements");
-  });
+    cy.visit('https://www.techglobal-training.com/frontend')
+    cy.clickCard('HTML Elements')
+  })
 
-  it("cy.wait() - Hard wait", () => {
+  it('cy.wait() - Hard wait', () => {
 
     cy.get('#checkbox_1').check()
 
     // cy.wait(10000)
 
     cy.get('#checkbox_2').check()
-  });
+  })
 
-  it("cy.pause() - Debugging using pause", () => {
+  it('cy.pause() - Debugging using pause', () => {
 
-    cy.visit(`${Cypress.env("SITE_URL")}/frontend`);
-    cy.clickCard("Login Function");
+    cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+    cy.clickCard('Login Function')
 
     cy.get('#username').type(Cypress.env('UI_USERNAME'))
 
@@ -29,11 +29,11 @@ describe("Debugging", () => {
     cy.get('#login_btn').click()
 
     cy.get('#success_lgn').should('be.visible')
-  });
+  })
 
   it('cy.debug() - Debugging using debug', () => {
-    cy.visit(`${Cypress.env("SITE_URL")}/frontend`);
-    cy.clickCard("Login Function");
+    cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+    cy.clickCard('Login Function')
 
     cy.get('#username').type(Cypress.env('UI_USERNAME'))
 
@@ -56,4 +56,4 @@ describe("Debugging", () => {
 
     cy.get('#success_lgn').should('be.visible')
   })
-});
+})

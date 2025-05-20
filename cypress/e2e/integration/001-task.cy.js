@@ -1,4 +1,4 @@
-    /**
+/**
   * Navigate to "https://www.techglobal-training.com/frontend/dynamic-elements"
   * Locate the below boxes is displayed
   * Box 1
@@ -18,19 +18,19 @@
 
 it('Test Case', () => {
 
-    cy.visit('https://www.techglobal-training.com/frontend/dynamic-elements')
-    cy.contains('Box 1').should('be.visible')
-    cy.contains('Box 2').should('be.visible')
+  cy.visit('https://www.techglobal-training.com/frontend/dynamic-elements')
+  cy.contains('Box 1').should('be.visible')
+  cy.contains('Box 2').should('be.visible')
 })
 
 // how you should do it:
 it('Test Case 2', () => {
 
-    cy.visit('https://www.techglobal-training.com/frontend/dynamic-elements')
+  cy.visit('https://www.techglobal-training.com/frontend/dynamic-elements')
     
-    cy.get('[id^=box_]').should('be.visible')
+  cy.get('[id^=box_]').should('be.visible')
 
-    //or:
+  //or:
 /*
     cy.get('[id^=box1_1_]')
     cy.get('[id^=box1_2_]')

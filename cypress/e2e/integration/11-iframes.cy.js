@@ -1,19 +1,19 @@
 /// <reference types="cypress"/>
 
-describe("Handling iFrames", () => {
-    beforeEach(() => {
-      cy.visit("https://www.techglobal-training.com/frontend");
-      cy.contains(".card", "IFrames").click();
-    });
+describe('Handling iFrames', () => {
+  beforeEach(() => {
+    cy.visit('https://www.techglobal-training.com/frontend')
+    cy.contains('.card', 'IFrames').click()
+  })
   
-    it("iFrames", () => {
-      cy.get("#form_frame")
-        .its("0.contentDocument.body")
-        .find("#first_name")
-        .type("myName");
-    });
+  it('iFrames', () => {
+    cy.get('#form_frame')
+      .its('0.contentDocument.body')
+      .find('#first_name')
+      .type('myName')
+  })
   
-    /**
+  /**
      * Go to https://techglobal-training.com/frontend/
      * Click on the "IFrames" card
      * Enter "John" into the first name input box
@@ -22,24 +22,24 @@ describe("Handling iFrames", () => {
      * Validate the result equals "You entered: John Doe"
      */
   
-    it("iFrame Test Case", () => {
+  it('iFrame Test Case', () => {
   
-      const arr = ["John", "Doe"];
+    const arr = ['John', 'Doe']
   
-      // SELECT first_name, last_name FROM namesTable
+    // SELECT first_name, last_name FROM namesTable
   
-      // "Alina, alineLastName, 1 , 12312321"
+    // "Alina, alineLastName, 1 , 12312321"
   
-      cy.get('#form_frame')
+    cy.get('#form_frame')
       .its('0.contentDocument.body')
       .find('[id$="_name"]').each(($el, index) => {
         cy.wrap($el).type(arr[index])
       })
   
-      cy.get('#form_frame')
+    cy.get('#form_frame')
       .its('0.contentDocument.body')
       .find('#submit').click()
   
-      cy.get('#result').should('have.text', `You entered: ${arr.join(' ')}`)
-    });
-  });
+    cy.get('#result').should('have.text', `You entered: ${arr.join(' ')}`)
+  })
+})

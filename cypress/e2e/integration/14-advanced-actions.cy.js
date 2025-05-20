@@ -1,29 +1,29 @@
 /// <reference types="cypress"/>
 
-describe("Keyboard & Mouse Actions", () => {
+describe('Keyboard & Mouse Actions', () => {
   beforeEach(() => {
-    cy.visit("https://www.techglobal-training.com/frontend");
-    cy.clickCard("Actions");
-  });
+    cy.visit('https://www.techglobal-training.com/frontend')
+    cy.clickCard('Actions')
+  })
 
-  it("Mouse actions using Cypress events", () => {
+  it('Mouse actions using Cypress events', () => {
     // cy.get('#dropdown-testing').trigger('mouseover')
 
-    cy.get("#dropdown-testing").realHover();
-  });
+    cy.get('#dropdown-testing').realHover()
+  })
 
   it('Keyboard Actions', () => {
-    cy.visit("https://www.techglobal-training.com/frontend");
-    cy.clickCard("HTML Elements");
+    cy.visit('https://www.techglobal-training.com/frontend')
+    cy.clickCard('HTML Elements')
 
     cy.get('#text_input1')
-    .realClick()
-    .realPress('KeyA')
-    .realPress('Tab')
-    .realPress('KeyB')
-    .realPress('ArrowLeft')
-    .realPress('KeyR')
-    .realPress('Backspace')
+      .realClick()
+      .realPress('KeyA')
+      .realPress('Tab')
+      .realPress('KeyB')
+      .realPress('ArrowLeft')
+      .realPress('KeyR')
+      .realPress('Backspace')
     // .realPress(['Shift', 'KeyA'])
     // .realPress('Shift')
     // .realPress(["Alt", "Meta", "a"])
@@ -52,13 +52,13 @@ describe("Keyboard & Mouse Actions", () => {
     cy.get('[id$="click"]').as('buttons')
 
     cy.get('@buttons').first().should('have.text', 'Click on me').click()
-    .next().should('have.text', 'You clicked on a button!')
+      .next().should('have.text', 'You clicked on a button!')
 
     cy.get('@buttons').eq(1).should('have.text', 'Right-Click on me').rightclick()
-    .next().should('have.text', 'You right-clicked on a button!')
+      .next().should('have.text', 'You right-clicked on a button!')
 
     cy.get('@buttons').last().should('have.text', 'Double-Click on me').dblclick()
-    .next().should('have.text', 'You double-clicked on a button!')
+      .next().should('have.text', 'You double-clicked on a button!')
   })
 
   it('Drag and Drop', () => {
@@ -67,6 +67,6 @@ describe("Keyboard & Mouse Actions", () => {
 
 
 
-});
+})
 
 
